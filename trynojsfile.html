@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fahrenheit, Celsius, Kelvin converter</title>
+        <meta charset="utf-8">
+        <style>
+            .logo {
+  display: flex;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.logo-icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin-right: 10px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo-text {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="logo">
+            <span class="logo-icon">TC</span>
+            <span class="logo-text">Temperature Converters</span>
+          </div>
+          <h1>Fahrenheit, Celsius, Kelvin converter</h1>
+        <h2>Note: This only converts the temperatures from Kelvin, not any other thing. It should display in the &lt;p&gt; tag under the &lt;input&gt; box.</h2>
+        <p>Enter a temperature in Kelvin:</p>
+        <input type="number" id="kelvin-input" value="293">
+        <p id="output"></p> 
+        <script>
+            const output = document.getElementById('output');
+
+function updateTemperatures(kelvin) {
+  output.textContent = `The temperature is ${kelvin} degrees Kelvin.`;
+
+  var celsius = kelvin - 273;
+  output.textContent += `\nThe temperature is ${celsius} degrees Celsius.`;
+
+  var fahrenheit = celsius * (9/5) + 32;
+  var roundedDownFahrenheit = Math.floor(fahrenheit);
+  output.textContent += `\nThe temperature is ${roundedDownFahrenheit} degrees Fahrenheit.`;
+
+  var Newtonscale = celsius * (33/100);
+  var flooredDownNewtonscale = Math.floor(Newtonscale);
+  output.textContent += `\nThe temperature in the Newton Scale is ${flooredDownNewtonscale}.`;
+}
+
+// Initial update with the original value of kelvin
+updateTemperatures(293);
+
+// Update temperatures whenever kelvin changes
+const kelvinInput = document.getElementById('kelvin-input');
+kelvinInput.addEventListener('input', () => {
+  const kelvinValue = parseInt(kelvinInput.value);
+  updateTemperatures(kelvinValue);
+});
+
+
+        </script>
+    </body>
+</html>
