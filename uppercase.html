@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Uppercase Converter</title>
+  </head>
+  <body>
+    <label for="nameInput">Enter your name:</label>
+    <input type="text" id="nameInput">
+    <button onclick="convertToUpperCase()">Convert to Uppercase</button>
+    <p id="result"></p>
+
+    <script>
+      function convertToUpperCase() {
+        // Retrieve the value from the input box
+        const nameInput = document.getElementById('nameInput');
+        const name = nameInput.value;
+
+        // Convert the value to uppercase
+        const uppercaseName = name.toUpperCase();
+
+        // Display the result on the page
+        const resultElement = document.getElementById('result');
+        resultElement.textContent = `Your name in uppercase is: ${uppercaseName}`;
+      }
+    </script>
+  </body>
+</html>
