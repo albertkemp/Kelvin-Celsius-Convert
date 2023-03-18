@@ -4,3 +4,4 @@ this is a simple html/javascript program to convert Celsius to kelvin and the ne
 Note: I know the temperatures don't line up with the input box in the photo, but trust me it works.
 <img src="Screen Shot 2023-03-19 at 8.31.30 am.png" height="400px" alt="An image of my converter">
 The other thing I made was an uppercase converter:
+<img src="Screen Shot 2023-03-19 at 10.06.50 am.png" height="400px" alt="the name uppercase converter">
