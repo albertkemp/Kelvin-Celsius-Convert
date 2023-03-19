@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head><title>My Console</title><style>
+    #console {
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        color: #fff;
+        font-family: monospace;
+        font-size: 1.2em;
+        padding: 10px;
+    }
+    body {
+        background-color: black;
+    }
+    button {
+        background-color: yellow;
+        height: 50px;
+        width: 100px;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        border-radius: 20px;
+    }
+    button:hover {
+        background-color: grey;
+        cursor: pointer;
+    }
+    p {
+        color: white;
+    }
+</style></head>
+<div id="console"></div>
+
+<button onclick="window.location.reload();">Run</button>
+<p>Get a better version of the temperature <a href="trynojsfile.html">here.</a></p>
+<script>
+    if (window.console) console = { 
+    log: function(){
+        var output='',
+            console=document.getElementById('console');
+        for (var i=0;i<arguments.length;i++) {
+            output+=arguments[i]+' ';
+        }
+        console.innerText+=output+"\n";
+    }
+};
+
+//test
+console.log('Magic 8 ball:')
+var userName = 'Albert';
+userName ? console.log(`Hello, ${userName}!`) : console.log('Hello!');
+var userQuestion = '';
+console.log(`${userQuestion}`);
+console.log(`What a good question, ${userName}!`)
+var randomNumber = Math.floor(Math.random() * 8);
+var eightBall = ''
+if (randomNumber === 0) {
+  console.log('It is certain!');
+}
+if (randomNumber === 1) {
+  console.log('It is decidedly so');
+}
+if (randomNumber === 2) {
+  console.log('Reply hazy try again');
+}
+if (randomNumber === 3) {
+  console.log('Cannot predict now');
+}
+if (randomNumber === 4) {
+  console.log('Do not count on it');
+}
+if (randomNumber === 5) {
+  console.log('My sources say no');
+}
+if (randomNumber === 6) {
+  console.log('Outlook not so good');
+}
+if (randomNumber === 7) {
+  console.log('Signs point to yes');
+}
+let str = "Albert";
+let reversedStr = str.split("").reverse().join("");
+console.log(reversedStr); // Output: !dlroW olleH
+
+</script>

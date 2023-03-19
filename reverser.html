@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>String Reverser</title>
+    <script>
+      function toBackwards() {
+        var str = document.getElementById("inputString").value;
+        var reversedStr = "";
+        for (var i = str.length - 1; i >= 0; i--) {
+          reversedStr += str[i];
+        }
+        document.getElementById("outputString").innerHTML = reversedStr;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>String Reverser</h1>
+    <form>
+      <label for="inputString">Enter a string:</label>
+      <input type="text" id="inputString" name="inputString"><br><br>
+      <button type="button" onclick="toBackwards()">Reverse String</button><br><br>
+      <label for="outputString">Reversed string:</label>
+      <span id="outputString"></span>
+    </form>
+  </body>
+</html>
